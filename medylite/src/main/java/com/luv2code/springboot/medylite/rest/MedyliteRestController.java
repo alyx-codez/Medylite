@@ -29,7 +29,7 @@ public class MedyliteRestController {
 	}
 
 	@GetMapping("/hello")
-	public String heelo()
+	public String hello()	// Fixed a Minor Typo !
 	{
 		return "Welcome to medylite";
 	}
@@ -58,7 +58,7 @@ public class MedyliteRestController {
 	@GetMapping("/chemist/{chemistId}")
 	public Chemist getChemist(@PathVariable int chemistId)
 	{
-		Chemist theChemist = new Chemist();
+		Chemist theChemist = new Chemist(); // Why is this required ?? ------- Changes !
 		theChemist = chemistService.findByIdChem(chemistId);
 		
 		if(theChemist == null)
@@ -113,7 +113,7 @@ public class MedyliteRestController {
 	}
 	
 	@PutMapping("/user")
-	public Users updateEmployee(@RequestBody Users theUser)
+	public Users updateUser(@RequestBody Users theUser) // Update : updateEmployee to updateUser
 	{
 		chemistService.saveUser(theUser);
 		return theUser;
